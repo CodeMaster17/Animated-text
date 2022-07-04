@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(79, 78, 78);
+}
+.wrapper{
+    display: inline-flex;
+    font-size: 2em;
+}
+.staticText{
+    color: yellow;
+}
+.wrapper .AnimatedText{
+    height:40px;
+    line-height: 40px;
+    overflow: hidden;
+}
+.AnimatedText li{
+    /* border: 2px solid black; */
+    color: red;
+    list-style: none;
+    position: relative;
+    top:0;
+    animation : changeText 12s steps(4) infinite
+}
+@keyframes changeText{
+    100%{
+        top: -160px;
+    }
+}
+.AnimatedText li span{
+    position: relative;
+    padding-left: 10px;
+}
+.AnimatedText li span::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width : 100%;
+    background-color:  rgb(79, 78, 78);
+    border-left : 2px solid #FC6D6D;
+    animation : textVisible 3s steps(17) infinite
+}
+@keyframes textVisible{
+    100%{
+        left: 100%;
+    }
+}
